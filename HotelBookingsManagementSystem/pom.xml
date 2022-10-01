@@ -11,7 +11,7 @@
 	<groupId>com</groupId>
 	<artifactId>HotelBookingsManaagementSystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>HotelBookingsManaagementSystem</name>
+	<name>HotelBookingsManagementSystem</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
