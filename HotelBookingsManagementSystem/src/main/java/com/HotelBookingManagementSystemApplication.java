@@ -4,13 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HotelBookingsManagementSystemApplication {
+public class HotelBookingManagementSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HotelBookingsManagementSystemApplication.class, args);
-
-		System.out.println("......Connected to Database......");
-
+		SpringApplication.run(HotelBookingManagementSystemApplication.class, args);
 	}
 
 }
