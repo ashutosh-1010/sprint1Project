@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -28,6 +30,9 @@ public class BookingDetails
 	@NotNull(message = "To date is mandatory")
 	private Date booked_to;
 	private double amount;
+	
+	@OneToOne
+	private User user;
 	
 	public int getBooking_id() {
 		return booking_id;
@@ -84,12 +89,18 @@ public class BookingDetails
 		this.amount = amount;
 	}
 	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 	@Override
 	public String toString() {
 		return "BookingDetails [booking_id=" + booking_id + ", hotel_id=" + hotel_id + ", room_id=" + room_id
 				+ ", user_id=" + user_id + ", no_of_adults=" + no_of_adults + ", no_of_children=" + no_of_children
-				+ ", booked_from=" + booked_from + ", booked_to=" + booked_to + ", amount=" + amount + "]";
+				+ ", booked_from=" + booked_from + ", booked_to=" + booked_to + ", amount=" + amount + ", user=" + user
+				+ "]";
 	}
-	
-	
 }

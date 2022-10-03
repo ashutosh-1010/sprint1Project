@@ -1,12 +1,16 @@
 package com.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 
 @Entity
@@ -18,14 +22,18 @@ public class User {
 	private String userName;
 	@Email
 	private String email;
-	@NotBlank(message="Password is mandatory")
+	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$",message = "password should have atleast one uppercase,one lowercase,one digit and one special character")
 	private String password;
 	@NotBlank(message="Role is mandatory")
 	private String role;
-	@NotBlank(message="Mobile Number is mandatory")
+	@Pattern(regexp = "^(\\+\\d{1,3}[- ]?)?\\d{10}$",message = "mobile number is not valid")
 	private String mobile;
 	@NotBlank(message="Address is mandatory")
 	private String address;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "bookingId",unique=true)
+	private BookingDetails bookingDetails;
 	
 	public int getUserId() {
 		return userId;
@@ -70,10 +78,19 @@ public class User {
 		this.address = address;
 	}
 	
+	public BookingDetails getBookingDetails() {
+		return bookingDetails;
+	}
+	public void setBookingDetails(BookingDetails bookingDetails) {
+		this.bookingDetails = bookingDetails;
+	}
+	
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", email=" + email + ", password=" + password
-				+ ", role=" + role + ", mobile=" + mobile + ", address=" + address + "]";
+				+ ", role=" + role + ", mobile=" + mobile + ", address=" + address + ", bookingDetails="
+				+ bookingDetails + "]";
 	}
-
+	
+	
 }
