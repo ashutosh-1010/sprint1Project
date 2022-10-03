@@ -14,8 +14,8 @@ public class ITransactionServiceImpl implements ITransactionService{
 	@Override
 	public ITransaction addTransaction(ITransaction transaction) {
 		
-		repo.save(transaction);
-		return transaction;
+		return repo.save(transaction);
+		
 	}
 
 }

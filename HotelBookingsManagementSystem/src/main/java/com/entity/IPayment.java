@@ -25,7 +25,7 @@ public class IPayment {
 	private int tId;
 	
 	@OneToOne(cascade=CascadeType.ALL)
-	@JsonBackReference
+	
 	ITransaction t;
 	
 	

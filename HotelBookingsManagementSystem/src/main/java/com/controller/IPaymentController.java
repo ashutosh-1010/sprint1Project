@@ -24,7 +24,7 @@ public class IPaymentController {
 	@PostMapping("/addpayment")
 	  public ResponseEntity<IPayment> addpayment(@Valid @RequestBody IPayment payment) 
 	  { 
-		  IPayment p = paymentservice.addPayment(payment);
-		  return new ResponseEntity<>(paymentservice.addPayment(p),HttpStatus.OK);
+		  paymentservice.addPayment(payment);
+		  return new ResponseEntity<>(HttpStatus.OK);
 	  }
 }

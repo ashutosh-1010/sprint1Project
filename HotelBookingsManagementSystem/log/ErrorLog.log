@@ -2570,3 +2570,277 @@ org.postgresql.util.PSQLException: ERROR: null value in column "user_id" of rela
 30-Sep-2022 15:30:45 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
 
 
+01-Oct-2022 15:20:15 INFO - HV000001: Hibernate Validator 6.2.5.Final
+01-Oct-2022 15:20:17 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01-Oct-2022 15:20:18 INFO - Finished Spring Data repository scanning in 218 ms. Found 6 JPA repository interfaces.
+01-Oct-2022 15:20:18 INFO - Tomcat initialized with port(s): 8080 (http)
+01-Oct-2022 15:20:18 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 15:20:18 INFO - Starting service [Tomcat]
+01-Oct-2022 15:20:18 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+01-Oct-2022 15:20:19 INFO - Initializing Spring embedded WebApplicationContext
+01-Oct-2022 15:20:19 INFO - Root WebApplicationContext: initialization completed in 3069 ms
+01-Oct-2022 15:20:19 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+01-Oct-2022 15:20:19 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+01-Oct-2022 15:20:19 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01-Oct-2022 15:20:20 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+01-Oct-2022 15:20:20 WARN - SQL Warning Code: 0, SQLState: 00000
+01-Oct-2022 15:20:20 WARN - relation "room_details" does not exist, skipping
+01-Oct-2022 15:20:20 WARN - SQL Warning Code: 0, SQLState: 00000
+01-Oct-2022 15:20:20 WARN - table "booking_details" does not exist, skipping
+01-Oct-2022 15:20:20 WARN - SQL Warning Code: 0, SQLState: 00000
+01-Oct-2022 15:20:20 WARN - table "hotel" does not exist, skipping
+01-Oct-2022 15:20:20 WARN - SQL Warning Code: 0, SQLState: 00000
+01-Oct-2022 15:20:20 WARN - table "room_details" does not exist, skipping
+01-Oct-2022 15:20:20 WARN - SQL Warning Code: 0, SQLState: 00000
+01-Oct-2022 15:20:20 WARN - table "user_details" does not exist, skipping
+01-Oct-2022 15:20:21 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Oct-2022 15:20:21 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 15:20:21 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01-Oct-2022 15:20:22 INFO - Starting ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 15:20:22 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+01-Oct-2022 18:05:50 INFO - Application shutdown requested.
+01-Oct-2022 18:05:50 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 18:05:50 INFO - Stopping service [Tomcat]
+01-Oct-2022 18:05:50 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 18:05:50 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 18:05:50 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 08:54:23 INFO - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.service.RoomDetailsServiceTest], using SpringBootContextLoader
+03-Oct-2022 08:54:23 INFO - Could not detect default resource locations for test class [com.service.RoomDetailsServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+03-Oct-2022 08:54:23 INFO - Could not detect default configuration classes for test class [com.service.RoomDetailsServiceTest]: RoomDetailsServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+03-Oct-2022 08:54:23 INFO - Found @SpringBootConfiguration com.HotelBookingManagementSystemApplication for test class com.service.RoomDetailsServiceTest
+03-Oct-2022 08:54:23 INFO - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+03-Oct-2022 08:54:23 INFO - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d4602a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@21ae6e73, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@47dd778, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@15515c51, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@36a7abe1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@64a896b0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@e044b4a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@11a82d0f, org.springframework.test.context.event.EventPublishingTestExecutionListener@1adb7478, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3ae66c85, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@16943e88, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4604b900, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@73d6d0c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@e36bb2a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3961a41a]
+03-Oct-2022 08:54:23 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 08:54:26 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 08:54:26 INFO - Finished Spring Data repository scanning in 242 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 08:54:27 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 08:54:27 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 08:54:27 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 08:54:28 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 08:54:30 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 08:54:30 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 08:54:31 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 08:54:33 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 09:03:23 INFO - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.service.UserServiceTest], using SpringBootContextLoader
+03-Oct-2022 09:03:23 INFO - Could not detect default resource locations for test class [com.service.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+03-Oct-2022 09:03:23 INFO - Could not detect default configuration classes for test class [com.service.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+03-Oct-2022 09:03:23 INFO - Found @SpringBootConfiguration com.HotelBookingManagementSystemApplication for test class com.service.UserServiceTest
+03-Oct-2022 09:03:23 INFO - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+03-Oct-2022 09:03:23 INFO - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@534243e4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@29006752, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@470a9030, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@66d57c1b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@27494e46, org.springframework.test.context.support.DirtiesContextTestExecutionListener@d59970a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1e411d81, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@53b98ff6, org.springframework.test.context.event.EventPublishingTestExecutionListener@3e6fd0b9, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7fcff1b9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@697446d4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@76adb233, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@36074e47, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@36453307, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7dcc91fd]
+03-Oct-2022 09:03:24 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 09:03:26 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 09:03:27 INFO - Finished Spring Data repository scanning in 378 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 09:03:29 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 09:03:29 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 09:03:29 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 09:03:30 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 09:03:31 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 09:03:31 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 09:03:32 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 09:03:36 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 09:09:39 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 09:09:40 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 09:09:40 INFO - Finished Spring Data repository scanning in 163 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 09:09:41 INFO - Tomcat initialized with port(s): 8080 (http)
+03-Oct-2022 09:09:41 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:09:41 INFO - Starting service [Tomcat]
+03-Oct-2022 09:09:41 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+03-Oct-2022 09:09:41 INFO - Initializing Spring embedded WebApplicationContext
+03-Oct-2022 09:09:41 INFO - Root WebApplicationContext: initialization completed in 2065 ms
+03-Oct-2022 09:09:41 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 09:09:41 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 09:09:41 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 09:09:42 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 09:09:43 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 09:09:43 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 09:09:43 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 09:09:44 INFO - Starting ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:09:44 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+03-Oct-2022 09:12:50 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03-Oct-2022 09:12:50 INFO - Initializing Servlet 'dispatcherServlet'
+03-Oct-2022 09:12:50 INFO - Completed initialization in 1 ms
+03-Oct-2022 09:22:57 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 09:22:59 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 09:22:59 INFO - Finished Spring Data repository scanning in 205 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 09:23:00 INFO - Tomcat initialized with port(s): 8080 (http)
+03-Oct-2022 09:23:00 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:23:00 INFO - Starting service [Tomcat]
+03-Oct-2022 09:23:00 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+03-Oct-2022 09:23:01 INFO - Initializing Spring embedded WebApplicationContext
+03-Oct-2022 09:23:01 INFO - Root WebApplicationContext: initialization completed in 3521 ms
+03-Oct-2022 09:23:01 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 09:23:01 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 09:23:02 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 09:23:02 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 09:23:04 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 09:23:04 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 09:23:05 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 09:23:05 INFO - Starting ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:23:05 WARN - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+03-Oct-2022 09:23:05 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 09:23:05 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:23:05 INFO - Stopping service [Tomcat]
+03-Oct-2022 09:23:05 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:23:05 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:23:05 INFO - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+03-Oct-2022 09:23:05 ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+03-Oct-2022 09:32:14 INFO - Application shutdown requested.
+03-Oct-2022 09:32:14 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:32:14 INFO - Stopping service [Tomcat]
+03-Oct-2022 09:32:14 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+03-Oct-2022 09:32:14 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:32:14 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:32:14 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 09:33:43 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 09:33:45 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 09:33:45 INFO - Finished Spring Data repository scanning in 491 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 09:33:46 INFO - Tomcat initialized with port(s): 8080 (http)
+03-Oct-2022 09:33:46 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:33:46 INFO - Starting service [Tomcat]
+03-Oct-2022 09:33:46 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+03-Oct-2022 09:33:47 INFO - Initializing Spring embedded WebApplicationContext
+03-Oct-2022 09:33:47 INFO - Root WebApplicationContext: initialization completed in 4238 ms
+03-Oct-2022 09:33:47 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 09:33:47 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 09:33:48 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 09:33:49 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 09:33:50 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 09:33:50 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 09:33:51 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 09:33:52 INFO - Starting ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 09:33:52 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+03-Oct-2022 10:27:01 INFO - Application shutdown requested.
+03-Oct-2022 10:27:01 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:27:01 INFO - Stopping service [Tomcat]
+03-Oct-2022 10:27:01 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:27:01 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:27:01 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 10:27:04 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 10:27:05 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 10:27:06 INFO - Finished Spring Data repository scanning in 151 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 10:27:06 INFO - Tomcat initialized with port(s): 8080 (http)
+03-Oct-2022 10:27:06 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:27:06 INFO - Starting service [Tomcat]
+03-Oct-2022 10:27:06 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+03-Oct-2022 10:27:06 INFO - Initializing Spring embedded WebApplicationContext
+03-Oct-2022 10:27:06 INFO - Root WebApplicationContext: initialization completed in 2359 ms
+03-Oct-2022 10:27:06 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 10:27:07 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 10:27:07 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 10:27:07 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 10:27:08 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 10:27:08 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 10:27:09 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 10:27:09 INFO - Starting ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:27:09 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+03-Oct-2022 10:27:52 INFO - Application shutdown requested.
+03-Oct-2022 10:27:52 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:27:52 INFO - Stopping service [Tomcat]
+03-Oct-2022 10:27:52 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:27:52 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:27:52 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 10:27:55 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 10:27:56 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 10:27:56 INFO - Finished Spring Data repository scanning in 164 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 10:27:57 INFO - Tomcat initialized with port(s): 8080 (http)
+03-Oct-2022 10:27:57 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:27:57 INFO - Starting service [Tomcat]
+03-Oct-2022 10:27:57 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+03-Oct-2022 10:27:57 INFO - Initializing Spring embedded WebApplicationContext
+03-Oct-2022 10:27:57 INFO - Root WebApplicationContext: initialization completed in 1968 ms
+03-Oct-2022 10:27:57 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 10:27:57 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 10:27:58 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 10:27:58 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 10:27:59 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 10:27:59 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 10:28:00 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 10:28:00 INFO - Starting ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:28:00 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+03-Oct-2022 10:28:19 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03-Oct-2022 10:28:19 INFO - Initializing Servlet 'dispatcherServlet'
+03-Oct-2022 10:28:19 INFO - Completed initialization in 1 ms
+03-Oct-2022 10:29:06 INFO - Application shutdown requested.
+03-Oct-2022 10:29:06 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:29:06 INFO - Stopping service [Tomcat]
+03-Oct-2022 10:29:06 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+03-Oct-2022 10:29:06 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:29:06 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:29:06 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 10:29:08 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 10:29:09 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 10:29:10 INFO - Finished Spring Data repository scanning in 163 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 10:29:10 INFO - Tomcat initialized with port(s): 8080 (http)
+03-Oct-2022 10:29:10 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:29:10 INFO - Starting service [Tomcat]
+03-Oct-2022 10:29:10 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+03-Oct-2022 10:29:10 INFO - Initializing Spring embedded WebApplicationContext
+03-Oct-2022 10:29:10 INFO - Root WebApplicationContext: initialization completed in 2042 ms
+03-Oct-2022 10:29:11 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 10:29:11 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 10:29:11 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 10:29:11 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 10:29:12 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 10:29:12 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 10:29:13 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 10:29:13 INFO - Starting ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 10:29:13 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+03-Oct-2022 10:29:22 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03-Oct-2022 10:29:22 INFO - Initializing Servlet 'dispatcherServlet'
+03-Oct-2022 10:29:22 INFO - Completed initialization in 1 ms
+03-Oct-2022 11:49:21 INFO - Application shutdown requested.
+03-Oct-2022 11:49:21 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 11:49:21 INFO - Stopping service [Tomcat]
+03-Oct-2022 11:49:21 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+03-Oct-2022 11:49:21 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 11:49:21 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+03-Oct-2022 11:49:21 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 13:10:01 INFO - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.service.ITransactionServiceImplTest], using SpringBootContextLoader
+03-Oct-2022 13:10:01 INFO - Could not detect default resource locations for test class [com.service.ITransactionServiceImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+03-Oct-2022 13:10:01 INFO - Could not detect default configuration classes for test class [com.service.ITransactionServiceImplTest]: ITransactionServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+03-Oct-2022 13:10:01 INFO - Found @SpringBootConfiguration com.HotelBookingManagementSystemApplication for test class com.service.ITransactionServiceImplTest
+03-Oct-2022 13:10:01 INFO - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+03-Oct-2022 13:10:01 INFO - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3935e9a8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@288a4658, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5b56b654, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@452c8a40, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@534243e4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@29006752, org.springframework.test.context.transaction.TransactionalTestExecutionListener@470a9030, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66d57c1b, org.springframework.test.context.event.EventPublishingTestExecutionListener@27494e46, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@d59970a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1e411d81, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@53b98ff6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3e6fd0b9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7fcff1b9, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@697446d4]
+03-Oct-2022 13:10:02 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 13:10:03 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 13:10:04 INFO - Finished Spring Data repository scanning in 173 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 13:10:05 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 13:10:05 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 13:10:05 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 13:10:06 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 13:10:07 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 13:10:07 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 13:10:07 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 13:10:09 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 13:15:07 INFO - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.service.IPaymentServiceImplTest], using SpringBootContextLoader
+03-Oct-2022 13:15:07 INFO - Could not detect default resource locations for test class [com.service.IPaymentServiceImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+03-Oct-2022 13:15:07 INFO - Could not detect default configuration classes for test class [com.service.IPaymentServiceImplTest]: IPaymentServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+03-Oct-2022 13:15:07 INFO - Found @SpringBootConfiguration com.HotelBookingManagementSystemApplication for test class com.service.IPaymentServiceImplTest
+03-Oct-2022 13:15:07 INFO - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+03-Oct-2022 13:15:07 INFO - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3935e9a8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@288a4658, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5b56b654, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@452c8a40, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@534243e4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@29006752, org.springframework.test.context.transaction.TransactionalTestExecutionListener@470a9030, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66d57c1b, org.springframework.test.context.event.EventPublishingTestExecutionListener@27494e46, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@d59970a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1e411d81, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@53b98ff6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3e6fd0b9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7fcff1b9, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@697446d4]
+03-Oct-2022 13:15:07 INFO - HV000001: Hibernate Validator 6.2.5.Final
+03-Oct-2022 13:15:09 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Oct-2022 13:15:09 INFO - Finished Spring Data repository scanning in 165 ms. Found 6 JPA repository interfaces.
+03-Oct-2022 13:15:10 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Oct-2022 13:15:10 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+03-Oct-2022 13:15:10 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+03-Oct-2022 13:15:11 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+03-Oct-2022 13:15:12 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-Oct-2022 13:15:12 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Oct-2022 13:15:13 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Oct-2022 13:15:15 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'

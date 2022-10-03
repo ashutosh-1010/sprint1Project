@@ -11,31 +11,32 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.entity.IPayment;
 import com.entity.ITransaction;
-import com.repository.IPaymentRepository;
-@SpringBootTest 
-class IPaymentServiceImplTest {
+import com.repository.ITransactionRepository;
+
+@SpringBootTest
+class ITransactionServiceImplTest {
 
 	@Autowired
-	IPaymentService PService;
-	@MockBean
-	IPaymentRepository PRepository;
-	@Test
-	void testAddPayment() {
+	ITransactionService TService;
 	
-ITransaction t = new ITransaction();
-		
-		t.settId(12);
-		t.setAmount(15000);
-		
+	@MockBean
+	ITransactionRepository TRepository;
+	@Test
+	void testAddTransaction() {
 		IPayment p= new IPayment();
 		p.setpId(1);
 		p.setbId(1);
-		p.settId(1);
-		p.setT(t);
+		p.settId(1);;
+	
+		ITransaction t = new ITransaction();
+		
+		t.settId(12);
+		t.setAmount(15000);
+		t.setP(p);
 		
 		
-		Mockito.when(PRepository.save(p)).thenReturn(p);
-		assertThat(PService.addPayment(p)).isEqualTo(p);
+		Mockito.when(TRepository.save(t)).thenReturn(t);
+		assertThat(TService.addTransaction(t)).isEqualTo(t);
 	}
 
 }

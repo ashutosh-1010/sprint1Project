@@ -23,7 +23,7 @@ public class ITransactionController {
 	@PostMapping("/addtransaction")
 	public ResponseEntity<ITransaction> addTransaction(@Valid @RequestBody ITransaction transaction) {
 	
-		ITransaction t = transactionservice.addTransaction(transaction);
-		return new ResponseEntity<>(transactionservice.addTransaction(t),HttpStatus.OK);
+		transactionservice.addTransaction(transaction);
+		return new ResponseEntity<>(HttpStatus.OK);
 }
 }
