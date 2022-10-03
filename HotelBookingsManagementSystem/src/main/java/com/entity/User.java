@@ -1,9 +1,12 @@
 package com.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -26,6 +29,10 @@ public class User {
 	private String mobile;
 	@NotBlank(message="Address is mandatory")
 	private String address;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "booking_Id",referencedColumnName = "booking_id")
+	BookingDetails bookingDetails;
 	
 	public int getUserId() {
 		return userId;

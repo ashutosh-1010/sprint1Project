@@ -36,6 +36,10 @@ public class RoomDetails {
 	//@JsonIgnore
 	Hotel hotel;
 	
+	@ManyToOne
+	@JoinColumn(name = "bid")
+	BookingDetails bookingDetails;
+	
 	public Hotel getHotel() {
 		return hotel;
 	}
