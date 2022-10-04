@@ -18,7 +18,7 @@ public class IPaymentServiceImpl implements IPaymentService {
 	@Override
 	public IPayment addPayment(IPayment payment)
 	{
-		//Supplier s1 = ()->new ResourceNotFoundException("Enter valid details");
+		Supplier s1 = ()->new ResourceNotFoundException("Enter valid details");
 		
 	    IPayment p = repo.save(payment);
 		return p;

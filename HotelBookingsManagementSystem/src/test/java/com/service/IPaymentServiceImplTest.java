@@ -30,7 +30,6 @@ ITransaction t = new ITransaction();
 		IPayment p= new IPayment();
 		p.setpId(1);
 		p.setbId(1);
-		p.settId(1);
 		p.setT(t);
 		
 		

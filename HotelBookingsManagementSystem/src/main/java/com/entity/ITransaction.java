@@ -24,12 +24,6 @@ public class ITransaction {
 	private int tId;
 	@Min(value=10000,message="Amount should be greater than Ten Thousand")
 	private double amount;
-
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="tId",unique=true)
-	@JsonBackReference
-    IPayment p;
 	
 	public int gettId() {
 		return tId;
@@ -47,19 +41,9 @@ public class ITransaction {
 		this.amount = amount;
 	}
 	
-	
-
-	public IPayment getP() {
-		return p;
-	}
-
-	public void setP(IPayment p) {
-		this.p = p;
-	}
-
 	@Override
 	public String toString() {
-		return "ITransaction [tId=" + tId + ", amount=" + amount + ", p=" + p + "]";
+		return "ITransaction [tId=" + tId + ", amount=" + amount + "]";
 	}
 
 	

@@ -21,8 +21,6 @@ public class IPayment {
 	private int pId;
 	@Min(value=1,message="Booking id should be greater than 0")
 	private int bId;
-	@Min(value=1,message="Transaction id should be greater than 0")
-	private int tId;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	
@@ -47,20 +45,11 @@ public class IPayment {
 	public void setbId(int bId) {
 		this.bId = bId;
 	}
-	public int gettId() {
-		return tId;
-	}
-	public void settId(int tId) {
-		this.tId = tId;
-	}
+
+
 	@Override
 	public String toString() {
-		return "IPayment [pId=" + pId + ", bId=" + bId + ", tId=" + tId + ", t=" + t + "]";
+		return "IPayment [pId=" + pId + ", bId=" + bId + ", t=" + t+ "]";
 	}
-	
-	
-	
-	
-	
 	
 }
