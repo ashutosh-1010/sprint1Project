@@ -1,15 +1,14 @@
 package com.entity;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import javax.persistence.Table;
 
-import javax.validation.constraints.Min;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 
 
@@ -17,9 +16,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Table(name="payment")
 public class IPayment {
 	@Id
-	@Min(value=1,message="Payment id should be greater than 0")
+	@GeneratedValue
 	private int pId;
-	@Min(value=1,message="Booking id should be greater than 0")
+
 	private int bId;
 	
 	@OneToOne(cascade=CascadeType.ALL)

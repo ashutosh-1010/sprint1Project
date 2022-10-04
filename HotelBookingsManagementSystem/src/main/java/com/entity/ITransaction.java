@@ -1,18 +1,13 @@
 package com.entity;
 
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
-
-
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.Min;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import javax.persistence.Table;
+
 
 
 @Entity
@@ -20,17 +15,18 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 public class ITransaction {
 
 	@Id
-	@Min(value=1,message="Transaction id should be greater than 0")
-	private int tId;
-	@Min(value=10000,message="Amount should be greater than Ten Thousand")
+	@GeneratedValue
+	private int transactionId;
 	private double amount;
 	
-	public int gettId() {
-		return tId;
+	
+
+	public int getTransactionId() {
+		return transactionId;
 	}
 
-	public void settId(int tId) {
-		this.tId = tId;
+	public void setTransactionId(int transactionId) {
+		this.transactionId = transactionId;
 	}
 
 	public double getAmount() {
@@ -43,7 +39,7 @@ public class ITransaction {
 	
 	@Override
 	public String toString() {
-		return "ITransaction [tId=" + tId + ", amount=" + amount + "]";
+		return "ITransaction [transactionId=" + transactionId + ", amount=" + amount + "]";
 	}
 
 	

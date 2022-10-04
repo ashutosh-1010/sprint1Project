@@ -1,7 +1,7 @@
 package com.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -22,15 +22,15 @@ class IPaymentServiceImplTest {
 	@Test
 	void testAddPayment() {
 	
-ITransaction t = new ITransaction();
+ITransaction transaction = new ITransaction();
 		
-		t.settId(12);
-		t.setAmount(15000);
+		transaction.setTransactionId(12);
+		transaction.setAmount(15000);
 		
 		IPayment p= new IPayment();
 		p.setpId(1);
 		p.setbId(1);
-		p.setT(t);
+		p.setT(transaction);
 		
 		
 		Mockito.when(PRepository.save(p)).thenReturn(p);
