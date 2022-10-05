@@ -54,7 +54,7 @@ public class IUserServiceImpl implements IUserService {
 		if(userDetailsList.isEmpty()) {
 			throw new EmptyListException("user details is empty");
 		}
-		return userRepository.findAll();
+		return userDetailsList;
 	}
 	
 	@Override
