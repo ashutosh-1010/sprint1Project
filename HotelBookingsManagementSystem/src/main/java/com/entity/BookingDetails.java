@@ -1,8 +1,5 @@
 package com.entity;
 
-import java.util.Date;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +13,6 @@ import javax.validation.constraints.Min;
 
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class BookingDetails
@@ -31,13 +27,11 @@ public class BookingDetails
 	private int noOfChildren;
 	private double amount;
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@NotNull(message = "From date is mandatory")
-	private Date bookedFrom;
+	private String bookedFrom;
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@NotNull(message = "To date is mandatory")
-	private Date bookedTo;
+	private String bookedTo;
 	
 	@ManyToOne
 	@JoinColumn(name="hotelId")
@@ -56,6 +50,7 @@ public class BookingDetails
 	public RoomDetails getRoomDetails() {
 		return roomDetails;
 	}
+	
 
 	public void setRoomDetails(RoomDetails roomDetails) {
 		this.roomDetails = roomDetails;
@@ -107,36 +102,30 @@ public class BookingDetails
 		this.noOfChildren = noOfChildren;
 	}
 	
-	public Date getBookedFrom() 
-	{
+	
+	public String getBookedFrom() {
 		return bookedFrom;
 	}
-	
-	public void setBookedFrom(Date bookedFrom) 
-	{
+
+	public void setBookedFrom(String bookedFrom) {
 		this.bookedFrom = bookedFrom;
 	}
-	
-	public Date getBookedTo() 
-	{
+
+	public String getBookedTo() {
 		return bookedTo;
 	}
-	
-	public void setBookedTo(Date bookedTo) 
-	{
+
+	public void setBookedTo(String bookedTo) {
 		this.bookedTo = bookedTo;
 	}
-	
-	public double getAmount() 
-	{
+
+	public double getAmount() {
 		return amount;
 	}
-	
-	public void setAmount(double amount)
-	{
+
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	
 
 	@Override
 	public String toString()

@@ -3,8 +3,6 @@ package com.servicetest;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -35,14 +33,11 @@ class BookingDetailsServiceImplTest
 	@Test
 	void testAddBookingDetails() throws Throwable
 	{
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		java.util.Date yourDate1 = sdf.parse("2022-07-22 10:00:00");
-		java.util.Date yourDate2 = sdf.parse("2022-07-25 10:00:00");
 		
 		BookingDetails b1=new BookingDetails();
 		b1.setAmount(10000.45);
-		b1.setBookedFrom(yourDate1);
-		b1.setBookedTo(yourDate2);
+		b1.setBookedFrom("2022-07-22");
+		b1.setBookedTo("2022-07-25");
 		b1.setNoOfAdults(2);
 		b1.setNoOfChildren(0);
 		b1.setBookingId(101);
@@ -81,23 +76,20 @@ class BookingDetailsServiceImplTest
 		b1.setRoomDetails(r);
 		
 		Mockito.when(bookingDetailsRepository.save(b1)).thenReturn(b1);
-		assertThat(bookingDetailsServiceImpl.addBookingDetails(b1)).isEqualTo(b1);
+		assertThat(bookingDetailsServiceImpl.addBookingDetails(b1)).isEqualTo("Room booked successfully");
 		
 	}
 	
 	@Test
 	void testUpdateBookingDetails() throws Throwable
 	{
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		java.util.Date yourDate1 = sdf.parse("2022-07-22 10:00:00");
-		java.util.Date yourDate2 = sdf.parse("2022-07-25 10:00:00");
 		BookingDetails b1=new BookingDetails();
 		b1.setBookingId(101);
 		b1.setNoOfAdults(2);
 		b1.setNoOfChildren(1);
 		b1.setAmount(4500.75);
-		b1.setBookedFrom(yourDate1);
-		b1.setBookedTo(yourDate2);
+		b1.setBookedFrom("2022-07-22");
+		b1.setBookedTo("2022-07-25");
 		
 		User u = new User();
 		u.setAddress("Chennai");
@@ -146,16 +138,13 @@ class BookingDetailsServiceImplTest
 	@Test
 	void testRemoveBookingDetails() throws Throwable
 	{
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		java.util.Date yourDate1 = sdf.parse("2022-07-22 10:00:00");
-		java.util.Date yourDate2 = sdf.parse("2022-07-25 10:00:00");
 		BookingDetails b1=new BookingDetails();
 		b1.setBookingId(101);
 		b1.setNoOfAdults(2);
 		b1.setNoOfChildren(1);
 		b1.setAmount(4500.75);
-		b1.setBookedFrom(yourDate1);
-		b1.setBookedTo(yourDate2);
+		b1.setBookedFrom("2022-07-22");
+		b1.setBookedTo("2022-07-25");
 		
 		User u = new User();
 		u.setAddress("Chennai");
@@ -201,16 +190,14 @@ class BookingDetailsServiceImplTest
 	@Test
 	void testShowBookingDetails() throws Throwable
 	{
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		java.util.Date yourDate1 = sdf.parse("2022-07-22 10:00:00");
-		java.util.Date yourDate2 = sdf.parse("2022-07-25 10:00:00");
+
 		BookingDetails b1=new BookingDetails();
 		b1.setBookingId(101);
 		b1.setNoOfAdults(2);
 		b1.setNoOfChildren(1);
 		b1.setAmount(4500.75);
-		b1.setBookedFrom(yourDate1);
-		b1.setBookedTo(yourDate2);
+		b1.setBookedFrom("2022-07-22");
+		b1.setBookedTo("2022-07-25");
 		
 		User u = new User();
 		u.setAddress("Chennai");
@@ -255,25 +242,22 @@ class BookingDetailsServiceImplTest
 	@Test
 	void testShowAllBookingDetails() throws Throwable
 	{
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		java.util.Date yourDate1 = sdf.parse("2022-07-22 10:00:00");
-		java.util.Date yourDate2 = sdf.parse("2022-07-25 10:00:00");
 		
 		BookingDetails b1=new BookingDetails();
 		b1.setBookingId(101);
 		b1.setNoOfAdults(2);
 		b1.setNoOfChildren(1);
 		b1.setAmount(4500.75);
-		b1.setBookedFrom(yourDate1);
-		b1.setBookedTo(yourDate2);
+		b1.setBookedFrom("2022-07-22");
+		b1.setBookedTo("2022-07-25");
 		
 		BookingDetails b2=new BookingDetails();
 		b1.setBookingId(102);
 		b1.setNoOfAdults(3);
 		b1.setNoOfChildren(2);
 		b1.setAmount(5580.75);
-		b1.setBookedFrom(yourDate1);
-		b1.setBookedTo(yourDate2);
+		b1.setBookedFrom("2022-07-22");
+		b1.setBookedTo("2022-07-25");
 		
 		User u = new User();
 		u.setAddress("Chennai");
