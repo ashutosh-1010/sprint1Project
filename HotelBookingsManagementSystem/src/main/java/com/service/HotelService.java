@@ -13,7 +13,7 @@ public interface HotelService {
     
     public Hotel updateHotel(Hotel hotel) throws ResourceNotFoundException;
     
-    public Hotel removeHotel(Hotel hotel) throws ResourceNotFoundException;
+    public String removeHotel(Hotel hotel) throws ResourceNotFoundException;
     
     public List<Hotel> showAllHotels() throws EmptyListException;
     

@@ -43,7 +43,7 @@ public class HotelController {
     }
     
     @DeleteMapping("/removehotel")
-    public ResponseEntity<Hotel> removeHotel(@Valid @RequestBody Hotel hotel) throws ResourceNotFoundException
+    public ResponseEntity<String> removeHotel(@Valid @RequestBody Hotel hotel) throws ResourceNotFoundException
     {
         return new ResponseEntity<>(hotelservice.removeHotel(hotel),HttpStatus.OK);   
     }

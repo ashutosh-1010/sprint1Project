@@ -1,5 +1,6 @@
 package com.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,7 @@ public class IPayment {
 	private int paymentId;
 
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name="transactionId",unique = true)
 	@JsonBackReference
 	ITransaction transaction;

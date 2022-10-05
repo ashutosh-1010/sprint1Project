@@ -14,6 +14,7 @@ import com.repository.IPaymentRepository;
 @Service
 public class IPaymentServiceImpl implements IPaymentService {
 
+	private String message="payment id is not available";
 	
 	@Autowired
 	IPaymentRepository repo;
@@ -32,10 +33,19 @@ public class IPaymentServiceImpl implements IPaymentService {
 		}
 		return payments;
 	}
+	
 	@Override
 	public IPayment showPayment(int id) throws ResourceNotFoundException {
-		Supplier<ResourceNotFoundException> s1=()-> new ResourceNotFoundException("payment id is not available");
+		Supplier<ResourceNotFoundException> s1=()-> new ResourceNotFoundException(message);
 		return repo.findById(id).orElseThrow(s1);
+	}
+	
+	@Override
+	public String removePayment(int paymentId) throws ResourceNotFoundException {
+		Supplier<ResourceNotFoundException> s1=()-> new ResourceNotFoundException(message);
+		repo.findById(paymentId).orElseThrow(s1);
+		repo.deleteById(paymentId);
+		return "Payment cancelled";
 	}
 
 }

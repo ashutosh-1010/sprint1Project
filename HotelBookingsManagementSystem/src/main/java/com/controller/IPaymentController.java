@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,5 +42,10 @@ public class IPaymentController {
 	@GetMapping("/showpayment/{id}")
 	public ResponseEntity<IPayment> showUser(@PathVariable  int id) throws ResourceNotFoundException {
 		return new ResponseEntity<>(paymentservice.showPayment(id),HttpStatus.OK);
+	}
+	
+	@DeleteMapping("/removepayment/{paymentId}")
+	public ResponseEntity<String> removePayment(@PathVariable  int paymentId) throws ResourceNotFoundException {
+		return new ResponseEntity<>(paymentservice.removePayment(paymentId),HttpStatus.OK);
 	}
 }

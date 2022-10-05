@@ -11,4 +11,5 @@ public interface IPaymentService {
 	public IPayment addPayment(IPayment payment);
 	public List<IPayment> showAllPayment() throws EmptyListException;
 	public IPayment showPayment(int id) throws ResourceNotFoundException;
+	public String removePayment(int paymentId) throws ResourceNotFoundException;
 }
