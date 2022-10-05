@@ -1,13 +1,17 @@
 package com.entity;
 
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 
 @Entity
@@ -17,10 +21,18 @@ public class ITransaction {
 	@Id
 	@GeneratedValue
 	private int transactionId;
-	private double amount;
-	
-	
 
+	private double amount;
+
+	
+	/*
+	 * @OneToOne(cascade=CascadeType.ALL)
+	 * 
+	 * @JoinColumn(name="transactionId",unique=true)
+	 * 
+	 * @JsonBackReference IPayment payment;
+	 */
+	
 	public int getTransactionId() {
 		return transactionId;
 	}
@@ -37,10 +49,21 @@ public class ITransaction {
 		this.amount = amount;
 	}
 	
+	/*
+	 * public IPayment getPayment() { return payment; }
+	 * 
+	 * public void setP(IPayment payment) { this.payment = payment;
+	 * 
+	 * }
+	 */
+	 
+
 	@Override
 	public String toString() {
 		return "ITransaction [transactionId=" + transactionId + ", amount=" + amount + "]";
 	}
+
+	
 
 	
 }
