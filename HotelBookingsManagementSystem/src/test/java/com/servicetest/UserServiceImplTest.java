@@ -1,4 +1,4 @@
-package com.service;
+package com.servicetest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,9 +15,10 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.entity.User;
 import com.repository.UserRepository;
+import com.service.IUserService;
 
 @SpringBootTest
-class UserServiceTest {
+class UserServiceImplTest {
 	
 	@Autowired
 	IUserService uService;
@@ -41,7 +42,7 @@ class UserServiceTest {
 	}
 	
 	@Test
-	void testUpdateUser() {
+	void testUpdateUser() throws Throwable {
 		User u1=new User();
 		u1.setUserId(1);
 		u1.setUserName("Abi");
@@ -86,7 +87,7 @@ class UserServiceTest {
 	}
 	
 	@Test
-	void testShowAllUsers() {
+	void testShowAllUsers() throws Throwable {
 		User u1=new User();
 		u1.setUserId(1);
 		u1.setUserName("Abi");
@@ -115,7 +116,7 @@ class UserServiceTest {
 	}
 	
 	@Test
-	void testShowUser(){
+	void testShowUser() throws Throwable{
 		User u2=new User();
 		u2.setUserId(2);
 		u2.setUserName("Ram");
@@ -130,5 +131,7 @@ class UserServiceTest {
 		Mockito.when(userRepository.findById(u2.getUserId())).thenReturn(uOptional);
 		assertThat(uService.showUser(u2.getUserId())).isEqualTo(u2);
 	}
+	
+	
 
 }

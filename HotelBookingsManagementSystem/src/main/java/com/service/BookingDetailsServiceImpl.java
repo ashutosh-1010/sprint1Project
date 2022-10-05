@@ -1,16 +1,21 @@
 package com.service;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.advices.EmptyListException;
+import com.advices.ResourceNotFoundException;
 import com.entity.BookingDetails;
 import com.repository.IBookingDetailsRepository;
 
 @Service
 public class BookingDetailsServiceImpl implements IBookingDetailsService
 {
+	private String message="Booking Id doesn't exist in the database";
+	
 	@Autowired
 	private IBookingDetailsRepository bookingDetailsRepository;
 
@@ -21,39 +26,46 @@ public class BookingDetailsServiceImpl implements IBookingDetailsService
 	}
 
 	@Override
-	public BookingDetails updateBookingDetails(BookingDetails bookingDetails)
+	public BookingDetails updateBookingDetails(BookingDetails bookingDetails) throws ResourceNotFoundException
 	{
-		BookingDetails bookingDetails2=bookingDetailsRepository.findById(bookingDetails.getBooking_id()).orElseThrow();
+		Supplier<ResourceNotFoundException> s1=()->new ResourceNotFoundException(message);
+		BookingDetails bookingDetails2=bookingDetailsRepository.findById(bookingDetails.getBookingId()).orElseThrow(s1);
 		
-		bookingDetails2.setHotel_id(bookingDetails.getHotel_id());
-		bookingDetails2.setRoom_id(bookingDetails.getRoom_id());
-		bookingDetails2.setUser_id(bookingDetails.getUser_id());
-		bookingDetails2.setNo_of_adults(bookingDetails.getNo_of_adults());
-		bookingDetails2.setNo_of_children(bookingDetails.getNo_of_children());
-		bookingDetails2.setBooked_from(bookingDetails.getBooked_from());
-		bookingDetails2.setBooked_to(bookingDetails.getBooked_to());
+		bookingDetails2.setNoOfAdults(bookingDetails.getNoOfAdults());
+		bookingDetails2.setNoOfChildren(bookingDetails.getNoOfChildren());
+		bookingDetails2.setBookedFrom(bookingDetails.getBookedFrom());
+		bookingDetails2.setBookedTo(bookingDetails.getBookedTo());
 		bookingDetails2.setAmount(bookingDetails.getAmount());
 		
 		return bookingDetailsRepository.save(bookingDetails2);
 	}
 
 	@Override
-	public String removeBookingDetails(int booking_id) 
+	public String removeBookingDetails(int bookingId) throws ResourceNotFoundException
 	{
-		bookingDetailsRepository.deleteById(booking_id);
+		Supplier<ResourceNotFoundException> s1=()->new ResourceNotFoundException(message);
+		bookingDetailsRepository.findById(bookingId).orElseThrow(s1);
+		bookingDetailsRepository.deleteById(bookingId);
 		return "Deleted successfully";
 	}
 
 	@Override
-	public BookingDetails showBookingDetails(int booking_id) 
+	public BookingDetails showBookingDetails(int bookingId) throws ResourceNotFoundException
 	{
-		return bookingDetailsRepository.findById(booking_id).orElseThrow();
+		Supplier<ResourceNotFoundException> s1=()->new ResourceNotFoundException(message);
+		return bookingDetailsRepository.findById(bookingId).orElseThrow(s1);
 	}
 
 	@Override
-	public List<BookingDetails> showAllBookingDetails()
+	public List<BookingDetails> showAllBookingDetails() throws EmptyListException
 	{
-		return bookingDetailsRepository.findAll();
+		List<BookingDetails> bookingDetails= bookingDetailsRepository.findAll();
+		if(bookingDetails.isEmpty())
+		{
+			throw new EmptyListException("No booking details available");
+		}
+		return bookingDetails;
 	}
 	
 }
+

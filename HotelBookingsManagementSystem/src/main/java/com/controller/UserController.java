@@ -16,39 +16,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.advices.EmptyListException;
+import com.advices.ResourceNotFoundException;
 import com.entity.User;
 import com.service.IUserService;
 
 @RestController
-@RequestMapping("User")
+@RequestMapping("/user")
 public class UserController {
 	
 	@Autowired
 	IUserService userService;
 	
-	@PostMapping("adduser")
+	@PostMapping("/adduser")
 	public ResponseEntity<User> addUser(@Valid  @RequestBody User user){
-		userService.addUser(user);
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>(userService.addUser(user),HttpStatus.OK);
 	}
 	
-	@PutMapping("updateuser")
-	public ResponseEntity<User> updateUser(@Valid   @RequestBody   User user) {
+	@PutMapping("/updateuser")
+	public ResponseEntity<User> updateUser(@Valid   @RequestBody   User user) throws ResourceNotFoundException {
 		return new ResponseEntity<>(userService.updateUser(user),HttpStatus.OK);
 	}
 	
-	@DeleteMapping("removeuser/{userId}")
-	public ResponseEntity<String> removeUser(@PathVariable int userId) {
+	@DeleteMapping("/removeuser/{userId}")
+	public ResponseEntity<String> removeUser(@PathVariable int userId) throws ResourceNotFoundException {
 		return new ResponseEntity<>(userService.removeUser(userId),HttpStatus.OK);
 	}
 	
-	@GetMapping("showusers")
-	public ResponseEntity<List<User>> showAllUsers(){
+	@GetMapping("/showusers")
+	public ResponseEntity<List<User>> showAllUsers() throws EmptyListException{
 		return new ResponseEntity<>(userService.showAllUsers(),HttpStatus.OK);
 	}
 	
-	@GetMapping("showuser/{userId}")
-	public ResponseEntity<User> showUser(@PathVariable  int userId) {
+	@GetMapping("/showuser/{userId}")
+	public ResponseEntity<User> showUser(@PathVariable  int userId) throws ResourceNotFoundException {
 		return new ResponseEntity<>(userService.showUser(userId),HttpStatus.OK);
 	}
 	

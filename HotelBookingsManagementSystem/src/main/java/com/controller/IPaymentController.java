@@ -15,7 +15,7 @@ import com.entity.IPayment;
 import com.service.IPaymentService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/payment")
 public class IPaymentController {
 	
 	@Autowired
@@ -24,7 +24,7 @@ public class IPaymentController {
 	@PostMapping("/addpayment")
 	  public ResponseEntity<IPayment> addpayment(@Valid @RequestBody IPayment payment) 
 	  { 
-		  IPayment p = paymentservice.addPayment(payment);
-		  return new ResponseEntity<>(paymentservice.addPayment(p),HttpStatus.OK);
+		  
+		  return new ResponseEntity<>(paymentservice.addPayment(payment),HttpStatus.OK);
 	  }
 }

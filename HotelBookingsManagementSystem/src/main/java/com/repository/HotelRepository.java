@@ -8,7 +8,5 @@ import com.entity.*;
 
 @Repository
 public interface HotelRepository extends JpaRepository<Hotel,Integer>{
-	
-	
 
 }

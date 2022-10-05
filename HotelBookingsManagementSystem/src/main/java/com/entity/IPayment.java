@@ -1,66 +1,57 @@
 package com.entity;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+
 import javax.persistence.OneToOne;
 
 import javax.persistence.Table;
 
-import javax.validation.constraints.Min;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
-
 
 @Entity
 @Table(name="payment")
 public class IPayment {
 	@Id
-	@Min(value=1,message="Payment id should be greater than 0")
-	private int pId;
-	@Min(value=1,message="Booking id should be greater than 0")
-	private int bId;
-	@Min(value=1,message="Transaction id should be greater than 0")
-	private int tId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int paymentId;
+
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
+	@JoinColumn(name="transactionId",unique = true)
 	@JsonBackReference
-	ITransaction t;
+	ITransaction transaction;
 	
 	
-	public ITransaction getT() {
-		return t;
+	@OneToOne
+	@JoinColumn(name="bookingId")
+	BookingDetails bookingDetails;
+	
+	
+	public BookingDetails getBookingDetails() {
+		return bookingDetails;
 	}
-	public void setT(ITransaction t) {
-		this.t = t;
+	public void setBookingDetails(BookingDetails bookingDetails) {
+		this.bookingDetails = bookingDetails;
 	}
-	public int getpId() {
-		return pId;
+	public ITransaction getTransaction() {
+		return transaction;
 	}
-	public void setpId(int pId) {
-		this.pId = pId;
+	public void setTransaction(ITransaction transaction) {
+		this.transaction = transaction;
 	}
-	public int getbId() {
-		return bId;
+	public int getPaymentId() {
+		return paymentId;
 	}
-	public void setbId(int bId) {
-		this.bId = bId;
+	public void setPaymentId(int paymentId) {
+		this.paymentId = paymentId;
 	}
-	public int gettId() {
-		return tId;
-	}
-	public void settId(int tId) {
-		this.tId = tId;
-	}
+
 	@Override
 	public String toString() {
-		return "IPayment [pId=" + pId + ", bId=" + bId + ", tId=" + tId + ", t=" + t + "]";
+		return "IPayment [paymentId=" + paymentId + "]";
 	}
-	
-	
-	
-	
-	
-	
 }
