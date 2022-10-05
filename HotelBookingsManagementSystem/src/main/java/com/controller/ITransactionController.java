@@ -14,7 +14,7 @@ import com.entity.ITransaction;
 import com.service.ITransactionService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/transaction")
 public class ITransactionController {
 
 	@Autowired
@@ -23,7 +23,7 @@ public class ITransactionController {
 	@PostMapping("/addtransaction")
 	public ResponseEntity<ITransaction> addTransaction(@Valid @RequestBody ITransaction transaction) {
 	
-		ITransaction t = transactionservice.addTransaction(transaction);
-		return new ResponseEntity<>(transactionservice.addTransaction(t),HttpStatus.OK);
+		
+		return new ResponseEntity<>(transactionservice.addTransaction(transaction),HttpStatus.OK);
 }
 }

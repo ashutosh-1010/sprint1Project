@@ -4,10 +4,15 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+
+import javax.persistence.ManyToOne;
+
 import javax.persistence.OneToOne;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Min;
+
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -16,91 +21,130 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class BookingDetails
 {
 	@Id
-	@GeneratedValue
-	private int booking_id;
-	private int hotel_id;
-	private int room_id;
-	private int user_id;
-	private int no_of_adults;
-	private int no_of_children;
-	@JsonFormat(pattern="MM/dd/yyyy HH:mm:ss",timezone = "Asia/Kolkata")
-	@NotNull(message = "From date is mandatory")
-	private Date booked_from;
-	@JsonFormat(pattern="MM/dd/yyyy HH:mm:ss",timezone = "Asia/Kolkata")
-	@NotNull(message = "To date is mandatory")
-	private Date booked_to;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int bookingId;
+	
+	@Min(1)
+	private int noOfAdults;
+	@Min(0)
+	private int noOfChildren;
 	private double amount;
 	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@NotNull(message = "From date is mandatory")
+	private Date bookedFrom;
+	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@NotNull(message = "To date is mandatory")
+	private Date bookedTo;
+	
+	@ManyToOne
+	@JoinColumn(name="hotelId")
+	Hotel hotel;
+
+	
 	@OneToOne
-	private User user;
+	@JoinColumn(name="userId")
+	User user;
 	
-	public int getBooking_id() {
-		return booking_id;
-	}
-	public void setBooking_id(int booking_id) {
-		this.booking_id = booking_id;
-	}
-	public int getHotel_id() {
-		return hotel_id;
-	}
-	public void setHotel_id(int hotel_id) {
-		this.hotel_id = hotel_id;
-	}
-	public int getRoom_id() {
-		return room_id;
-	}
-	public void setRoom_id(int room_id) {
-		this.room_id = room_id;
-	}
-	public int getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
-	public int getNo_of_adults() {
-		return no_of_adults;
-	}
-	public void setNo_of_adults(int no_of_adults) {
-		this.no_of_adults = no_of_adults;
-	}
-	public int getNo_of_children() {
-		return no_of_children;
-	}
-	public void setNo_of_children(int no_of_children) {
-		this.no_of_children = no_of_children;
-	}
-	public Date getBooked_from() {
-		return booked_from;
-	}
-	public void setBooked_from(Date booked_from) {
-		this.booked_from = booked_from;
-	}
-	public Date getBooked_to() {
-		return booked_to;
-	}
-	public void setBooked_to(Date booked_to) {
-		this.booked_to = booked_to;
-	}
-	public double getAmount() {
-		return amount;
-	}
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
+	@ManyToOne
+	@JoinColumn(name="roomId")
+	RoomDetails roomDetails;
 	
+	
+	public RoomDetails getRoomDetails() {
+		return roomDetails;
+	}
+
+	public void setRoomDetails(RoomDetails roomDetails) {
+		this.roomDetails = roomDetails;
+	}
+
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
+
 	public User getUser() {
 		return user;
 	}
+
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	@Override
-	public String toString() {
-		return "BookingDetails [booking_id=" + booking_id + ", hotel_id=" + hotel_id + ", room_id=" + room_id
-				+ ", user_id=" + user_id + ", no_of_adults=" + no_of_adults + ", no_of_children=" + no_of_children
-				+ ", booked_from=" + booked_from + ", booked_to=" + booked_to + ", amount=" + amount + ", user=" + user
-				+ "]";
+
+	public int getBookingId() 
+	{
+		return bookingId;
 	}
+	
+	public void setBookingId(int bookingId) 
+	{
+		this.bookingId = bookingId;
+	}
+	
+	public int getNoOfAdults()
+	{
+		return noOfAdults;
+	}
+	
+	public void setNoOfAdults(int noOfAdults)
+	{
+		this.noOfAdults = noOfAdults;
+	}
+	
+	public int getNoOfChildren()
+	{
+		return noOfChildren;
+	}
+	
+	public void setNoOfChildren(int noOfChildren)
+	{
+		this.noOfChildren = noOfChildren;
+	}
+	
+	public Date getBookedFrom() 
+	{
+		return bookedFrom;
+	}
+	
+	public void setBookedFrom(Date bookedFrom) 
+	{
+		this.bookedFrom = bookedFrom;
+	}
+	
+	public Date getBookedTo() 
+	{
+		return bookedTo;
+	}
+	
+	public void setBookedTo(Date bookedTo) 
+	{
+		this.bookedTo = bookedTo;
+	}
+	
+	public double getAmount() 
+	{
+		return amount;
+	}
+	
+	public void setAmount(double amount)
+	{
+		this.amount = amount;
+	}
+	
+
+	@Override
+	public String toString()
+	{
+		return "BookingDetails [bookingId=" + bookingId + ", noOfAdults=" + noOfAdults + ", noOfChildren="
+				+ noOfChildren + ", amount=" + amount + ", bookedFrom=" + bookedFrom + ", bookedTo=" + bookedTo
+				+ ", hotel=" + hotel + ", user=" + user + ", roomDetails=" + roomDetails + "]";
+	}
+	
 }
+
+

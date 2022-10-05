@@ -5,7 +5,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,48 +16,51 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.advices.EmptyListException;
+import com.advices.ResourceNotFoundException;
 import com.entity.BookingDetails;
 import com.service.BookingDetailsServiceImpl;
 
 @RestController
-@RequestMapping("booking_details")
+@RequestMapping("bookingDetails")
 public class BookingDetailsController 
 {
 	@Autowired
 	private BookingDetailsServiceImpl bookingDetailsServiceImpl;
 	
-	@PostMapping("add_booking_details")
-	public BookingDetails addBookingDetails(@Valid @RequestBody BookingDetails bookingDetails)
+	@PostMapping("addBookingDetails")
+	public ResponseEntity<BookingDetails> addBookingDetails(@Valid @RequestBody BookingDetails bookingDetails)
 	{
-		return bookingDetailsServiceImpl.addBookingDetails(bookingDetails);
+		bookingDetailsServiceImpl.addBookingDetails(bookingDetails);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 	
-	@PutMapping("update_booking_details")
-	public BookingDetails updateBookingDetails(@Valid @RequestBody BookingDetails bookingDetails)
+	@PutMapping("updateBookingDetails")
+	public ResponseEntity<BookingDetails> updateBookingDetails(@Valid @RequestBody BookingDetails bookingDetails) throws ResourceNotFoundException
 	{
-		return bookingDetailsServiceImpl.updateBookingDetails(bookingDetails);
+		return new ResponseEntity<>(bookingDetailsServiceImpl.updateBookingDetails(bookingDetails),HttpStatus.OK)  ;
 	}
 	
 	
-	@DeleteMapping("remove_booking_details/{booking_id}")
-	public String removeBookingDetails(@PathVariable int booking_id)
+	@DeleteMapping("removeBookingDetails/{bookingId}")
+	public ResponseEntity<String> removeBookingDetails(@PathVariable int bookingId) throws ResourceNotFoundException
 	{
-		bookingDetailsServiceImpl.removeBookingDetails(booking_id);
-		return "Deleted successfully";
+		return new ResponseEntity<>(bookingDetailsServiceImpl.removeBookingDetails(bookingId),HttpStatus.OK);
 	}
 	
 	
-	@GetMapping("show_booking_details/{booking_id}")
-	public BookingDetails showBookingDetails(@PathVariable int booking_id)
+	@GetMapping("showBookingDetails/{bookingId}")
+	public ResponseEntity<BookingDetails> showBookingDetails(@PathVariable int bookingId) throws ResourceNotFoundException
 	{
-		return bookingDetailsServiceImpl.showBookingDetails(booking_id);
+		return new ResponseEntity<>(bookingDetailsServiceImpl.showBookingDetails(bookingId),HttpStatus.OK);
 	}
 	
 	
-	@GetMapping("show_all_booking_details")
-	public List<BookingDetails> showAllBookingDetails()
+	@GetMapping("showAllBookingDetails")
+	public ResponseEntity<List<BookingDetails>> showAllBookingDetails() throws EmptyListException
 	{
-		return bookingDetailsServiceImpl.showAllBookingDetails();
+		return new ResponseEntity<>(bookingDetailsServiceImpl.showAllBookingDetails(),HttpStatus.OK);
 	}
 }
+

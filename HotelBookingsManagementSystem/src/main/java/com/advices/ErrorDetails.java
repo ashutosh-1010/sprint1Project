@@ -1,7 +1,6 @@
 package com.advices;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class ErrorDetails {
 	
