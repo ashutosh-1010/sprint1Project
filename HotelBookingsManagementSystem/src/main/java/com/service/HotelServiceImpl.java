@@ -48,11 +48,11 @@ public class HotelServiceImpl implements HotelService {
     }
     
     @Override
-    public Hotel removeHotel(Hotel hotel) throws ResourceNotFoundException{
+    public String removeHotel(Hotel hotel) throws ResourceNotFoundException{
         Supplier<ResourceNotFoundException> s1 = ()->new ResourceNotFoundException(message);
         repo.findById(hotel.getHotelId()).orElseThrow(s1);
         repo.delete(hotel);
-        return hotel;
+        return "Hotel removed";
     }
 
    @Override

@@ -41,7 +41,7 @@ public class RoomDetailsController {
 	}
 	
 	@DeleteMapping("/removeroomdetails")
-	public ResponseEntity<RoomDetails> removeDetails(@RequestBody RoomDetails roomDetails) throws ResourceNotFoundException
+	public ResponseEntity<String> removeDetails(@RequestBody RoomDetails roomDetails) throws ResourceNotFoundException
 	{	
 		return new ResponseEntity<>(roomDetailsService.removeRoomDetails(roomDetails),HttpStatus.OK);
 	}

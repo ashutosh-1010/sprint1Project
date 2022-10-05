@@ -41,12 +41,12 @@ public class RoomDetailsServiceImpl implements RoomDetailsService {
 		return roomDetailsRepository.save(roomDetails);
 	}
 	
-	public RoomDetails removeRoomDetails(RoomDetails roomDetails) throws ResourceNotFoundException
+	public String removeRoomDetails(RoomDetails roomDetails) throws ResourceNotFoundException
 	{
 		Supplier<ResourceNotFoundException> s1= ()->new ResourceNotFoundException(message);
 		roomDetailsRepository.findById(roomDetails.getRoomId()).orElseThrow(s1);
 		roomDetailsRepository.delete(roomDetails);
-		return roomDetails;
+		return "Room removed";
 	}
 
 	public List<RoomDetails> showAllRoomDetails() throws EmptyListException

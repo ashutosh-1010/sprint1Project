@@ -12,7 +12,7 @@ public interface RoomDetailsService {
 	
 	public RoomDetails updateRoomDetails(RoomDetails roomDetails) throws ResourceNotFoundException;
 	
-	public RoomDetails removeRoomDetails(RoomDetails roomDetails) throws ResourceNotFoundException;
+	public String removeRoomDetails(RoomDetails roomDetails) throws ResourceNotFoundException;
 	
 	public List<RoomDetails> showAllRoomDetails() throws EmptyListException;
 	
