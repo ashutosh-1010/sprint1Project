@@ -29,10 +29,9 @@ public class BookingDetailsController
 	private BookingDetailsServiceImpl bookingDetailsServiceImpl;
 	
 	@PostMapping("addBookingDetails")
-	public ResponseEntity<BookingDetails> addBookingDetails(@Valid @RequestBody BookingDetails bookingDetails)
+	public ResponseEntity<String> addBookingDetails(@Valid @RequestBody BookingDetails bookingDetails)
 	{
-		bookingDetailsServiceImpl.addBookingDetails(bookingDetails);
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>(bookingDetailsServiceImpl.addBookingDetails(bookingDetails),HttpStatus.OK);
 	}
 	
 	
